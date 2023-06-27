@@ -1,0 +1,39 @@
+{
+  "name": "sun/epay",
+  "description": "Payment service Express Pay",
+  "authors": [
+    {
+      "name": "Kudryavtsev Sergey",
+      "email": "invaderman@mail.ru"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "ext-json": "*",
+    "ext-simplexml": "*",
+    "symfony/serializer": "^6.1",
+    "symfony/property-access": "^6.1",
+    "phpdocumentor/reflection-docblock": "^5.3",
+    "guzzlehttp/guzzle": "^7.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sun\\Epay\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Sun\\Epay\\EpayServiceProvider"
+      ],
+      "aliases": {
+        "Epay": "Sun\\Epay\\Facade"
+      }
+    }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.10",
+    "orchestra/testbench": "^8.5"
+  }
+}
