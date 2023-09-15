@@ -6,6 +6,8 @@ namespace Sun\Epay;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Sun\Epay\Service\Signature\SignatureService;
+use Sun\Epay\Service\Signature\SignatureServiceInterface;
 
 class EpayServiceProvider extends ServiceProvider
 {
@@ -40,5 +42,7 @@ class EpayServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/epay.php', 'epay');
 
         $this->app->singleton(Facade::FACADE_ACCESSOR, Epay::class);
+
+        $this->app->singleton(SignatureServiceInterface::class, SignatureService::class);
     }
 }
