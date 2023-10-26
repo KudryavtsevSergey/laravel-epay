@@ -22,10 +22,10 @@ use Throwable;
 class EpayCallbackController extends Controller
 {
     public function __construct(
-        private ArrayObjectMapper $arrayObjectMapper,
-        private SignatureServiceInterface $signatureService,
-        private EpayConfig $config,
-        private Dispatcher $dispatcher,
+        private readonly ArrayObjectMapper $arrayObjectMapper,
+        private readonly SignatureServiceInterface $signatureService,
+        private readonly EpayConfig $config,
+        private readonly Dispatcher $dispatcher,
     ) {
     }
 

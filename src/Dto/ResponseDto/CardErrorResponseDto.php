@@ -7,8 +7,8 @@ namespace Sun\Epay\Dto\ResponseDto;
 class CardErrorResponseDto implements ResponseDtoInterface
 {
     public function __construct(
-        private ?int $errorCode,
-        private ?string $errorMessage,
+        private readonly ?int $errorCode,
+        private readonly ?string $errorMessage,
     ) {
     }
 

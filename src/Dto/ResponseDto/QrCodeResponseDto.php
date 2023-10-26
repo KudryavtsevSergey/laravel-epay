@@ -7,7 +7,7 @@ namespace Sun\Epay\Dto\ResponseDto;
 class QrCodeResponseDto implements ResponseDtoInterface
 {
     public function __construct(
-        private string $qrCodeBody,
+        private readonly string $qrCodeBody,
     ) {
     }
 

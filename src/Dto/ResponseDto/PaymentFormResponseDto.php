@@ -7,7 +7,7 @@ namespace Sun\Epay\Dto\ResponseDto;
 class PaymentFormResponseDto extends CardErrorResponseDto
 {
     public function __construct(
-        private string $formUrl,
+        private readonly string $formUrl,
         ?int $errorCode,
         ?string $errorMessage,
     ) {

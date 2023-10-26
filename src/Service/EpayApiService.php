@@ -28,7 +28,7 @@ use Sun\Epay\Enum\LanguageEnum;
 class EpayApiService
 {
     public function __construct(
-        private EpayHttpClientService $httpClient,
+        private readonly EpayHttpClientService $httpClient,
     ) {
     }
 

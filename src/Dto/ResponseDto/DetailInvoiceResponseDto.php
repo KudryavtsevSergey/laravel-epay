@@ -13,25 +13,25 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 class DetailInvoiceResponseDto implements ResponseDtoInterface
 {
     public function __construct(
-        private string $accountNo,
-        private int $status,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHis'])] private DateTimeInterface $created,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHi'])] private DateTimeInterface $expiration, // yyyyMMdd, yyyyMMddHHmm
-        private float $amount,
-        private int $currency,
-        private string $info,
-        private ?string $surname,
-        private ?string $firstName,
-        private ?string $patronymic,
-        private ?string $city,
-        private ?string $street,
-        private ?string $house,
-        private ?string $building,
-        private ?string $apartment,
-        private ?bool $isNameEditable,
-        private ?bool $isAddressEditable,
-        private ?bool $isAmountEditable,
-        private ?string $invoiceUrl,
+        private readonly string $accountNo,
+        private readonly int $status,
+        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHis'])] private readonly DateTimeInterface $created,
+        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHi'])] private readonly DateTimeInterface $expiration, // yyyyMMdd, yyyyMMddHHmm
+        private readonly float $amount,
+        private readonly int $currency,
+        private readonly string $info,
+        private readonly ?string $surname,
+        private readonly ?string $firstName,
+        private readonly ?string $patronymic,
+        private readonly ?string $city,
+        private readonly ?string $street,
+        private readonly ?string $house,
+        private readonly ?string $building,
+        private readonly ?string $apartment,
+        private readonly ?bool $isNameEditable,
+        private readonly ?bool $isAddressEditable,
+        private readonly ?bool $isAmountEditable,
+        private readonly ?string $invoiceUrl,
     ) {
         InvoiceStatusEnum::checkAllowedValue($status);
         CurrencyEnum::checkAllowedValue($currency);

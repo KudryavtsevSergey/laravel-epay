@@ -7,8 +7,8 @@ namespace Sun\Epay\Dto\RequestDto;
 class CardInvoiceIdRequestDto implements RequestDtoInterface
 {
     public function __construct(
-        private int $cardInvoiceId,
-        private ?string $language = null,
+        private readonly int $cardInvoiceId,
+        private readonly ?string $language = null,
     ) {
     }
 

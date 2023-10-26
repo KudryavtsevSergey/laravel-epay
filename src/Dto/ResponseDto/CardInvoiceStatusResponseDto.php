@@ -9,8 +9,8 @@ use Sun\Epay\Enum\CardInvoiceStatusEnum;
 class CardInvoiceStatusResponseDto extends CardErrorResponseDto
 {
     public function __construct(
-        private int $amount,
-        private int $cardInvoiceStatus,
+        private readonly int $amount,
+        private readonly int $cardInvoiceStatus,
         ?int $errorCode,
         ?string $errorMessage,
     ) {

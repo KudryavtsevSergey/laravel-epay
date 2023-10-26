@@ -13,17 +13,17 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 class AddCardInvoiceRequestDto implements RequestDtoInterface
 {
     public function __construct(
-        private string $accountNo,
-        private float $amount,
-        private string $info,
-        private string $returnUrl,
-        private string $failUrl,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'Ymd'])] private ?DateTimeInterface $expiration = null,
-        private int $currency = CurrencyEnum::BYN,
-        private string $language = LanguageEnum::RUSSIAN,
-        private ?int $sessionTimeoutSecs = null,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHis'])] private ?DateTimeInterface $expirationDate = null,
-        private ?bool $returnInvoiceUrl = null
+        private readonly string $accountNo,
+        private readonly float $amount,
+        private readonly string $info,
+        private readonly string $returnUrl,
+        private readonly string $failUrl,
+        #[Context([DateTimeNormalizer::FORMAT_KEY => 'Ymd'])] private readonly ?DateTimeInterface $expiration = null,
+        private readonly int $currency = CurrencyEnum::BYN,
+        private readonly string $language = LanguageEnum::RUSSIAN,
+        private readonly ?int $sessionTimeoutSecs = null,
+        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHis'])] private readonly ?DateTimeInterface $expirationDate = null,
+        private readonly ?bool $returnInvoiceUrl = null
     ) {
     }
 

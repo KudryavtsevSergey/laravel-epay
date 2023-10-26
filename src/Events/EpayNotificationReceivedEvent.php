@@ -9,7 +9,7 @@ use Sun\Epay\Dto\ResponseDto\NotificationDto;
 class EpayNotificationReceivedEvent
 {
     public function __construct(
-        private NotificationDto $notificationDto,
+        private readonly NotificationDto $notificationDto,
     ) {
     }
 

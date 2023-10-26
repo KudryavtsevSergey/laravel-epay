@@ -7,8 +7,8 @@ namespace Sun\Epay\Dto\ResponseDto;
 class AddInvoiceResponseDto implements ResponseDtoInterface
 {
     public function __construct(
-        private int $invoiceNo,
-        private ?string $InvoiceUrl,
+        private readonly int $invoiceNo,
+        private readonly ?string $InvoiceUrl,
     ) {
     }
 

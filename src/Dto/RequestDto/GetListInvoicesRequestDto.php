@@ -12,11 +12,11 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 class GetListInvoicesRequestDto implements RequestDtoInterface
 {
     public function __construct(
-        private string $token,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'Ymd'])] private ?DateTimeInterface $from,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'Ymd'])] private ?DateTimeInterface $to,
-        private ?string $accountNo,
-        private ?int $status,
+        private readonly string $token,
+        #[Context([DateTimeNormalizer::FORMAT_KEY => 'Ymd'])] private readonly ?DateTimeInterface $from,
+        #[Context([DateTimeNormalizer::FORMAT_KEY => 'Ymd'])] private readonly ?DateTimeInterface $to,
+        private readonly ?string $accountNo,
+        private readonly ?int $status,
     ) {
         InvoiceStatusEnum::checkAllowedValue($status, true);
     }

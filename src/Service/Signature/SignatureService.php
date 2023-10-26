@@ -9,7 +9,7 @@ use Sun\Epay\EpayConfig;
 class SignatureService implements SignatureServiceInterface
 {
     public function __construct(
-        private EpayConfig $epayConfig,
+        private readonly EpayConfig $epayConfig,
     ) {
     }
 

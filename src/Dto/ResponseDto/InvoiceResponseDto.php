@@ -13,14 +13,14 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 class InvoiceResponseDto implements ResponseDtoInterface
 {
     public function __construct(
-        private int $invoiceNo,
-        private string $accountNo,
-        private int $status,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHis'])] private DateTimeInterface $created,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHi'])] private DateTimeInterface $expiration, // yyyyMMdd, yyyyMMddHHmm
-        private float $amount,
-        private int $currency,
-        private ?int $cardInvoiceNo,
+        private readonly int $invoiceNo,
+        private readonly string $accountNo,
+        private readonly int $status,
+        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHis'])] private readonly DateTimeInterface $created,
+        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHi'])] private readonly DateTimeInterface $expiration, // yyyyMMdd, yyyyMMddHHmm
+        private readonly float $amount,
+        private readonly int $currency,
+        private readonly ?int $cardInvoiceNo,
     ) {
         InvoiceStatusEnum::checkAllowedValue($status);
         CurrencyEnum::checkAllowedValue($currency);

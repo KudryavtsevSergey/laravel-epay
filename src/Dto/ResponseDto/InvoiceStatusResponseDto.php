@@ -9,7 +9,7 @@ use Sun\Epay\Enum\InvoiceStatusEnum;
 class InvoiceStatusResponseDto implements ResponseDtoInterface
 {
     public function __construct(
-        private int $status,
+        private readonly int $status,
     ) {
         InvoiceStatusEnum::checkAllowedValue($status);
     }

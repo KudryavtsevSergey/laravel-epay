@@ -10,7 +10,7 @@ use Sun\Epay\Enum\CurrencyEnum;
 class AddInvoiceRequestDto extends AbstractInvoiceRequestDto
 {
     public function __construct(
-        private string $accountNo,
+        private readonly string $accountNo,
         float $amount,
         int $currency = CurrencyEnum::BYN,
         ?DateTimeInterface $expiration = null,

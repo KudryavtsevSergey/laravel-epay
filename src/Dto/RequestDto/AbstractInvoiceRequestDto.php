@@ -12,25 +12,25 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 abstract class AbstractInvoiceRequestDto implements RequestDtoInterface
 {
     public function __construct(
-        private float $amount,
-        private int $currency = CurrencyEnum::BYN,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHi'])] private ?DateTimeInterface $expiration = null, // yyyyMMdd, yyyyMMddHHmm
-        private ?string $info = null,
-        private ?string $surname = null,
-        private ?string $firstName = null,
-        private ?string $patronymic = null,
-        private ?string $city = null,
-        private ?string $street = null,
-        private ?string $house = null,
-        private ?string $building = null,
-        private ?string $apartment = null,
-        private ?bool $isNameEditable = null,
-        private ?bool $isAddressEditable = null,
-        private ?bool $isAmountEditable = null,
-        private ?string $emailNotification = null,
-        private ?string $smsPhone = null,
-        private ?bool $returnInvoiceUrl = null,
-        private ?int $lifeTime = null,
+        private readonly float $amount,
+        private readonly int $currency = CurrencyEnum::BYN,
+        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHi'])] private readonly ?DateTimeInterface $expiration = null, // yyyyMMdd, yyyyMMddHHmm
+        private readonly ?string $info = null,
+        private readonly ?string $surname = null,
+        private readonly ?string $firstName = null,
+        private readonly ?string $patronymic = null,
+        private readonly ?string $city = null,
+        private readonly ?string $street = null,
+        private readonly ?string $house = null,
+        private readonly ?string $building = null,
+        private readonly ?string $apartment = null,
+        private readonly ?bool $isNameEditable = null,
+        private readonly ?bool $isAddressEditable = null,
+        private readonly ?bool $isAmountEditable = null,
+        private readonly ?string $emailNotification = null,
+        private readonly ?string $smsPhone = null,
+        private readonly ?bool $returnInvoiceUrl = null,
+        private readonly ?int $lifeTime = null,
     ){
         CurrencyEnum::checkAllowedValue($currency);
     }

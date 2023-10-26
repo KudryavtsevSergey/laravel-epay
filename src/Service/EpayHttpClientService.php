@@ -19,9 +19,9 @@ class EpayHttpClientService
     private Client $client;
 
     public function __construct(
-        private ArrayObjectMapper $arrayObjectMapper,
-        private SignatureServiceInterface $signatureService,
-        private EpayConfig $config
+        private readonly ArrayObjectMapper $arrayObjectMapper,
+        private readonly SignatureServiceInterface $signatureService,
+        private readonly EpayConfig $config
     ) {
         $this->client = new Client([
             'base_uri' => $config->getGateway(),

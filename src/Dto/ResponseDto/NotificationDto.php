@@ -13,17 +13,17 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 class NotificationDto implements ResponseDtoInterface
 {
     public function __construct(
-        private int $cmdType,
-        private ?int $status,
-        private string $accountNo,
-        private string $invoiceNo,
-        private int $paymentNo,
-        private float $amount,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHis'])] private ?DateTimeInterface $created,
-        private string $service,
-        private string $payer,
-        private string $address,
-        private ?int $cardInvoiceNo,
+        private readonly int $cmdType,
+        private readonly ?int $status,
+        private readonly string $accountNo,
+        private readonly string $invoiceNo,
+        private readonly int $paymentNo,
+        private readonly float $amount,
+        #[Context([DateTimeNormalizer::FORMAT_KEY => 'YmdHis'])] private readonly ?DateTimeInterface $created,
+        private readonly string $service,
+        private readonly string $payer,
+        private readonly string $address,
+        private readonly ?int $cardInvoiceNo,
     ) {
         CmdTypeEnum::checkAllowedValue($cmdType);
         InvoiceStatusEnum::checkAllowedValue($status, $cmdType !== CmdTypeEnum::CHANGE_STATUS);

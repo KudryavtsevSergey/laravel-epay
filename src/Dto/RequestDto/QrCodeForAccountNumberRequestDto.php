@@ -9,11 +9,11 @@ use Sun\Epay\Enum\QrCodeViewTypeEnum;
 class QrCodeForAccountNumberRequestDto implements RequestDtoInterface
 {
     public function __construct(
-        private int $accountNumber,
-        private ?float $amount = null,
-        private ?string $viewType = null,
-        private ?int $imageWidth = null,
-        private ?int $imageHeight = null,
+        private readonly int $accountNumber,
+        private readonly ?float $amount = null,
+        private readonly ?string $viewType = null,
+        private readonly ?int $imageWidth = null,
+        private readonly ?int $imageHeight = null,
     ) {
         QrCodeViewTypeEnum::checkAllowedValue($viewType, true);
     }
